@@ -1,0 +1,6 @@
+*.json
+*.pdf
+*.classpath
+*.project
+/.settings
+/bin
