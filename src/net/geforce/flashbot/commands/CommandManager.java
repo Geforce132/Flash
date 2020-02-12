@@ -12,6 +12,7 @@ public class CommandManager {
 	public CommandManager() {
 		addCommand(new CommandActivity());
 		addCommand(new CommandSessionPlan());
+		addCommand(new CommandSchedule());
 	}
 	
 	public void addCommand(Command command) {

@@ -4,4 +4,6 @@
 *.project
 /.settings
 /bin
+/libs
+/tokens
 /src/net/geforce/flashbot/misc/Passwords.java
