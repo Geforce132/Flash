@@ -23,7 +23,7 @@ public class CommandActivity implements Command {
 
 	@Override
 	public void onMessageCreated(List<String> args, Message message, MessageAuthor author, TextChannel channel) {		
-		String activity = String.join(" ", args);
+		String activity = String.join(" ", args).toLowerCase();
 		
 		// Load the cards.json file
 		InputStream is = this.getClass().getResourceAsStream("cards.json");			
