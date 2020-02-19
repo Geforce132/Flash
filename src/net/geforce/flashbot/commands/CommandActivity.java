@@ -34,13 +34,17 @@ public class CommandActivity implements Command {
 		Activities activities = gson.fromJson(br, Activities.class);
 
 		// Iterate through every strategy and, if the name of it matches the name given in the command arguments, display its description
+		EmbedBuilder eb = null;
 		for(int i = 0; i < activities.strategies.length; i++) {
 			if(activities.strategies[i].name.toLowerCase().equals(activity)){
-				EmbedBuilder eb = new EmbedBuilder().setTitle(activities.strategies[i].name).setDescription(activities.strategies[i].description).addField("VARK", activities.strategies[i].vark);
+				eb = new EmbedBuilder().setTitle(activities.strategies[i].name).setDescription(activities.strategies[i].description).addField("VARK", activities.strategies[i].vark);
 				channel.sendMessage(eb);
 				break;
 			}
 		}
+
+		if(eb == null)
+			channel.sendMessage("An activity named '" + activity + "' could not be found!");
 	}
 	
 	@Override
